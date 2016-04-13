@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Ver</class>
+ <widget class="QWidget" name="Ver">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>616</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="btn_ver_lista">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>260</y>
+     <width>95</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Ver Lista</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="lista">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>601</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTableWidget{
+color : #ffffff;
+}
+QTableCornerButton::Section,
+QHeaderView::section{
+background:rgb(100,100,100);
+}</string>
+   </property>
+   <column>
+    <property name="text">
+     <string>Id</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Nombre</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Apellido</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Cedula</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Carrera</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Rol</string>
+    </property>
+   </column>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

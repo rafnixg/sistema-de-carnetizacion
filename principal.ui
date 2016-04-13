@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Principal</class>
+ <widget class="QMainWindow" name="Principal">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>617</width>
+    <height>370</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Sistema de Carnetizacion</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+	background-color:rgb(60,60,60);
+	color:#ffffff;
+}
+QWidget{
+	background-color:rgb(60,60,60);
+	color:#ffffff;
+}
+QLineEdit{
+background-color:rgb(100,100,100);
+border:3px solid rgba(0,0,0,80)
+}
+QComboBox{
+color:#ffffff;
+background-color:rgb(100,100,100);
+border:3px solid rgba(0,0,0,80);
+padding: 1px 0px 1px 3px;
+}
+QMenuBar::item{
+background-color:transparent;
+}
+
+QMenu::item{
+background-color:transparent;
+}
+
+QMenuBar,QStatusBar{
+background-color:rgb(100,100,100);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="central_widget">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>-1</y>
+      <width>621</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>-1</number>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>617</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="title">
+     <string>&amp;Menu</string>
+    </property>
+    <addaction name="action_Registrar"/>
+    <addaction name="action_Ver_Todos"/>
+    <addaction name="action_Generar_Todos"/>
+   </widget>
+   <addaction name="menuMenu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_Registrar">
+   <property name="text">
+    <string>&amp;Registrar</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+R</string>
+   </property>
+  </action>
+  <action name="action_Ver_Todos">
+   <property name="text">
+    <string>&amp;Ver Todos</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+V</string>
+   </property>
+  </action>
+  <action name="action_Generar_Todos">
+   <property name="text">
+    <string>&amp;Generar Todos</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+G</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

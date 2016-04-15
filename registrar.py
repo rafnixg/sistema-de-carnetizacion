@@ -26,7 +26,7 @@ class Registrar(QtGui.QWidget,form_registrar):
 		self.con = sqlite3.connect('db/carnets.db')
 		self.cursor = self.con.cursor()
 
-		# Datos
+		# Obtencion de datos
 		self.nombre = unicode(self.txt_nombre.text())
 		self.apellido = unicode(self.txt_apellido.text())
 		self.cedula = str(self.txt_cedula.text())
@@ -78,6 +78,7 @@ class Registrar(QtGui.QWidget,form_registrar):
 		self.con.close()
 
 	def btn_cargar_click(self):
+		# Cargamos la foto
 		self.filename = QtGui.QFileDialog.getOpenFileName(self,'Abrir Imagen','.','Archivos de Imagenes (*.jpg *.png *.bmp)')
 		if self.filename == "":
 			return False
@@ -86,6 +87,7 @@ class Registrar(QtGui.QWidget,form_registrar):
 		self.imagen = self.filename
 
 	def guardarImagen(self,ruta,nombre):
+		# Guardamos la imagen
 		self.imgOriginal = open(ruta)
 		self.imgCopia = open('img/fotos/'+nombre+'.png','w')
 		self.imgCopia.write(self.imgOriginal.read())

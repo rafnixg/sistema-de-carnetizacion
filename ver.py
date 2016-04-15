@@ -26,9 +26,12 @@ class Ver(QtGui.QWidget,form_ver):
 
 		# Cargo los datos de la db
 		self.cursor.execute("SELECT id, nombre, apellido, cedula, rol, carrera FROM Usuarios")
+		
+		# Inicializamos las filas de la tabla
 		row = 0
 		self.lista.setRowCount(0)
-		
+
+		# Recorremos el cursor
 		for i in self.cursor:
 			
 			self.id = i[0]
@@ -38,24 +41,27 @@ class Ver(QtGui.QWidget,form_ver):
 			self.rol = i[4]
 			self.carrera = i[5]
 
+			# Insertamos una nueva fila a la tabla
 			self.lista.insertRow(row)
 
-			nombre = QtGui.QTableWidgetItem(self.nombre)
-			apellido = QtGui.QTableWidgetItem(self.apellido)
-			cedula = QtGui.QTableWidgetItem(self.cedula)
-			rol = QtGui.QTableWidgetItem(self.rol)
-			carrera = QtGui.QTableWidgetItem(self.carrera)
-			id_u = QtGui.QTableWidgetItem(str(self.id))
+			# Convirtiendo el tipo de dato de las variables
+			self.nombre = QtGui.QTableWidgetItem(self.nombre)
+			self.apellido = QtGui.QTableWidgetItem(self.apellido)
+			self.cedula = QtGui.QTableWidgetItem(self.cedula)
+			self.rol = QtGui.QTableWidgetItem(self.rol)
+			self.carrera = QtGui.QTableWidgetItem(self.carrera)
+			self.id = QtGui.QTableWidgetItem(str(self.id))
 
-			self.lista.setItem(row,0,id_u)
-			self.lista.setItem(row,1,nombre)
-			self.lista.setItem(row,2,apellido)
-			self.lista.setItem(row,3,cedula)
-			self.lista.setItem(row,4,rol)
-			self.lista.setItem(row,5,carrera)
+			# Insertamos los datos en la tabla
+			self.lista.setItem(row,0,self.id)
+			self.lista.setItem(row,1,self.nombre)
+			self.lista.setItem(row,2,self.apellido)
+			self.lista.setItem(row,3,self.cedula)
+			self.lista.setItem(row,4,self.rol)
+			self.lista.setItem(row,5,self.carrera)
 
 			row+=1
-		
+		# Cerramos la conexion a la db
 		self.con.commit()
 		self.con.close()
 

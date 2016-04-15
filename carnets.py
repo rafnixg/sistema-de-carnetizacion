@@ -22,27 +22,31 @@ class Carnet:
 	pos_carrera = (30,495)
 
 	def generar(self,nombre,cedula,foto,rol,carrera,vence):
-		#Se abren las imagenes de fondo y la foto del usuario
+
+		# Se abren las imagenes de fondo y la foto del usuario
 		img = Image.open(self.fondo).convert('RGBA')
 		foto = Image.open(foto).convert('RGBA')
-		#cambio el tamaño de la foto del usuario
+
+		# Cambio el tamaño de la foto del usuario
 		foto = foto.resize(self.tam_foto)
-		#Se definen las fuentes y los tamaños
+
+		# Se definen las fuentes y los tamaños
 		fnt = ImageFont.truetype(self.fuente,18)
 		fnt_rol = ImageFont.truetype(self.fuente,30)
 		fnt_carrera = ImageFont.truetype(self.fuente,26)
-		#se combinan las 2 imagenes.
+
+		# Se combinan las 2 imagenes.
 		img.paste(foto,self.pos_foto,foto)
-		#Se prepara el area de dibujo
+
+		# Se prepara el area de dibujo
 		draw = ImageDraw.Draw(img)
-		#se dibujan los textos
+
+		# Se dibujan los textos
 		draw.text(self.pos_nombre,nombre,font=fnt,fill=(60,57,55,255))
 		draw.text(self.pos_ci,cedula,font=fnt,fill=(60,57,55,255))
 		draw.text(self.pos_vence,vence,font=fnt,fill=(60,57,55,255))
 		draw.text(self.pos_rol,rol,font=fnt_rol,fill=(60,57,55,255))
 		draw.text(self.pos_carrera,carrera,font=fnt_carrera,fill=(60,57,55,255))
-		#se guarda la imagen final
-		img.save("img/carnets/"+nombre+" "+cedula+".png")
 
-# carnet = Carnet()
-# carnet.ver("foto.png","Rafnix Guzmán","V-19.542.888","Vence en Febrero del 2016","ESTUDIANTE","Informática")
+		# Se guarda la imagen final
+		img.save("img/carnets/"+nombre+"-"+cedula+".png")

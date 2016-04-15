@@ -17,7 +17,7 @@ class Carnet:
 	fuente = 'font/OpenSans.ttf'
 	pos_nombre = (380,730)
 	pos_ci = (380,830)
-	pos_vence = (380,970)
+	pos_vence = (380,950)
 	pos_rol = (30,450)
 	pos_carrera = (30,495)
 

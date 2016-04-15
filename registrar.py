@@ -58,7 +58,7 @@ class Registrar(QtGui.QWidget,form_registrar):
 
 		self.guardarImagen(self.imagen,self.cedula)
 
-		self.datos = (self.nombre, self.apellido, self.cedula, self.carrera, self.rol, "img/"+self.cedula+".png")
+		self.datos = (self.nombre, self.apellido, self.cedula, self.carrera, self.rol, "img/fotos/"+self.cedula+".png")
 		
 		# Insertando los datos en la DB
 		self.cursor.execute("INSERT INTO Usuarios(nombre,apellido,cedula,carrera,rol,foto) VALUES (?,?,?,?,?,?)",self.datos)

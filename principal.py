@@ -77,7 +77,7 @@ class Principal(QtGui.QMainWindow, form_principal):
 			self.carrera = i[5]
 			self.foto = i[6]
 
-			self.carnet.generar(self.nombre+" "+self.apellido,self.cedula,self.foto,self.rol,self.carrera,"Feb del 2016")
+			self.carnet.generar(self.nombre+" "+self.apellido,self.cedula,self.foto,self.rol,self.carrera,"Abril del 2017")
 
 		print 'Genero las imagenes'
 

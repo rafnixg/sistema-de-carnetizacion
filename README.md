@@ -8,4 +8,6 @@ la carpeta fotos tendra dentro las fotos que sean cargadas al sistema, y la carp
 
 se debe tener PyQt4 para correr la interfaz grafica.
 
+para correr >python principal.py
+
 ![Imagen del Sistema](/img/sistema.png?raw=true)

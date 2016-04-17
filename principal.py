@@ -4,7 +4,7 @@
 # Desarrollado por Rafnix Guzman @rafnixg 
 # http://rafnixg.github.io/
 
-import sys, sqlite3
+import sys, sqlite3,os
 from PyQt4 import QtCore, QtGui, uic
 from registrar import Registrar
 from ver import Ver
@@ -45,6 +45,15 @@ class Principal(QtGui.QMainWindow, form_principal):
 
 	# Inicializando la db
 	def inicio(self):
+
+		if (not(os.path.exists("db"))):
+			os.mkdir("db")
+		if (not(os.path.exists("img/carnets"))):
+			os.mkdir("img/carnets")
+		if (not(os.path.exists("img/fotos"))):
+			os.mkdir("img/fotos")
+
+
 		self.con = sqlite3.connect('db/carnets.db')
 		self.cursor = self.con.cursor()
 		self.cursor.execute(""" CREATE TABLE IF NOT EXISTS Usuarios(id	INTEGER PRIMARY KEY AUTOINCREMENT,nombre	TEXT NOT NULL,apellido	TEXT NOT NULL,cedula	TEXT NOT NULL,carrera	TEXT NOT NULL,foto	TEXT NOT NULL,rol TEXT NOT NULL) """)
